@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 12:25:56 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/19 12:25:56 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/20 21:14:19 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+/* #include <stddef.h>
 #include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> */
+#include "libft.h"
 
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int cont;
+	size_t	cont;
+	void	*ptr;
 
 	cont = 0;
 	while (cont < n)
@@ -25,24 +27,24 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 		((char *)dest)[cont] = ((char *)src)[cont];
 		cont++;
 	}
-	//((char *)dest)[cont] = '\0';
-	return (dest);
+	ptr = dest;
+	return (ptr);
 }
-/* 
-int main(int argc, char *argv[])
+
+/* int	main(int argc, char *argv[])
 {
-	char src[10];
-	char dest1[10];
-	char dest2[10];
+	void	*dest[17];
+	void	*src1 = "string de prueba";
+	void	*src2 = "string de prueba";
+	size_t	n = 0;
 
-	strcpy(src, argv[1]);
-	printf("Valor de prueba: %s\n", src);
+	(void)argc;
+	(void)argv;
 
-	memcpy(dest1, src, atoi(argv[2]));
-	printf("Resultado MEMCPY: %s\n", dest1);
-
-	ft_memcpy(dest1, src, atoi(argv[2]));
-	printf("Resultado LIBFT: %s\n", dest1);
+	ft_memcpy(dest, src1, n);
+	printf("LIBFT   : %s\n", (char *)dest);
+	memcpy(dest, src2, n);
+	printf("Standard: %s\n", (char *)dest);
 	return (0);
 }
  */

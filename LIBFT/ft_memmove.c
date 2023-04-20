@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 13:13:22 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/19 13:13:22 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/20 17:54:17 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int cont;
+	int	cont;
 
 	cont = 0;
 	while (cont < n)

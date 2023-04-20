@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 11:12:56 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/19 11:12:56 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/20 20:52:37 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stddef.h>
+/* #include <stddef.h>
 #include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> */
+#include "libft.h"
 
-void *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
- 	int	cont;
+	size_t	cont;
 
 	cont = 0;
 	while (cont < n)
@@ -31,17 +31,20 @@ void *ft_memset(void *s, int c, size_t n)
 
 /* int	main(int argc, char *argv[])
 {
-	char	str[10];
+	void	*s;
+	int		c;
+	size_t	n;
+	char	str1[] = "str de testeo un poco mas larga";
+	char	str2[] = "_";
 
-	strcpy(str, argv[1]);
-	printf("Valor de prueba: %s\n", str);
+	(void)argc;
+	(void)argv;
+	s = (void *)str1 + 3;
+	c = (int)*str2;
+	n = 5;
 
-	memset(str, 'X', atoi(argv[2]));
-	printf("Resultado MEMSET: %s\n", str);
-
- 	strcpy(str, argv[1]);
-	ft_memset(str, 'X', atoi(argv[2]));
-	printf("Resultado LIBFT : %s\n", str);
-
+	printf("LIBFT   : %s\n", ft_memset(s, c, n));
+	printf("Standard: %s\n", memset(s, c, n));
 	return (0);
-} */
+}
+ */

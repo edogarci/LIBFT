@@ -3,21 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 11:54:02 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/19 11:54:02 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/20 20:58:10 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+/* #include <stddef.h>
 #include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> */
+#include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
- 	int	cont;
+	size_t	cont;
 
 	cont = 0;
 	while (cont < n)
@@ -27,14 +28,23 @@ void ft_bzero(void *s, size_t n)
 	}
 }
 
-/* int main(int argc, char *argv[])
+/* int	main(int argc, char *argv[])
 {
-	char str[10];
+	void	*s;
+	size_t	n;
+	char	str1[] = "str de testeo un poco mas larga";
 
-	strcpy(str, argv[1]);
-	printf("Valor de prueba: %s\n", str);
-	ft_bzero(str, atoi(argv[2]));
-	printf("Resultado LIBFT: %s\n", str);
+	(void)argc;
+	(void)argv;
+	n = 1;
+
+	s = (void *)str1;
+	ft_bzero(s, n);
+	printf("LIBFT   : %s\n", s);
+
+	s = (void *)str1;
+	bzero(s, n);
+	printf("Standard: %s\n", s);
 	return (0);
 }
  */
