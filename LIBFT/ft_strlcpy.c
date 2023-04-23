@@ -10,14 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <string.h>
+/* #include "libft.h"
+#include <string.h> */
+#include <stdio.h>
 
 size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t size)
 {
-	int	pos_dst;
-	int	pos_src;
-	int	cont_ret;
+	int		pos_dst;
+	size_t	pos_src;
+	int		cont_ret;
 
 	pos_dst = 0;
 	pos_src = 0;
@@ -33,3 +34,18 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t size)
 	cont_ret = ft_strlen(src);
 	return (cont_ret);
 }
+
+/* int	main(int argc, char *argv[])
+{
+	size_t	n;
+	char	str1[10];
+	char	str2[10];
+
+	(void)argc;
+	n = 5;
+
+	printf("LIBFT   : %u - %s\n", ft_strlcpy(str1, argv[1], n), str1);
+	printf("Standard: %u - %s\n", strlcpy(str2, argv[1], n), str2);
+	return (0);
+}
+ */

@@ -95,7 +95,7 @@ char	*ft_itoa(int n)
 	pass_int_to_str(ptr, n, num_of_digits);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	int		num;
 	char	*str;
@@ -104,3 +104,4 @@ int	main(void)
 	str = ft_itoa(num);
 	return (0);
 }
+ */

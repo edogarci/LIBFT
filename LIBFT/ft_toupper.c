@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+/* #include <stdio.h>
+#include <ctype.h> */
+#include "libft.h"
 
 int	ft_toupper(int c)
 {
@@ -19,3 +21,14 @@ int	ft_toupper(int c)
 	else
 		return (c);
 }
+
+/* int	main(int argc, char *argv[])
+{
+	char c;
+
+	(void)argc;
+	c = (int)*argv[1];
+
+	printf("LIBFT   : %c\n", ft_toupper(c));
+	printf("Standard: %c\n", toupper(c));
+} */

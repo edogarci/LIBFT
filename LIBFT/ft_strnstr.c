@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stddef.h>
+#include <string.h>
+#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -33,4 +34,16 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			}
 		}
 	}
+}
+
+int	main(int argc, char *argv[])
+{
+	(void)argc;
+	(void)argv;
+	/*printf("LIBFT   : %i\n", ft_strnstr(argv[1], argv[2], (size_t)argv[3]));
+	printf("Standard: %i\n", strnstr(argv[1], argv[2], (size_t)argv[3]));*/
+	printf("LIBFT   : %s\n", ft_strnstr("edorta esta programando", "esta", (size_t)50));
+	//printf("Standard: %s\n", strnstr("edorta esta programando", "esta", (size_t)50));
+
+	return (0);
 }

@@ -19,7 +19,6 @@
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	cont;
-	void	*ptr;
 
 	cont = 0;
 	while (cont < n)
@@ -27,8 +26,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		((char *)dest)[cont] = ((char *)src)[cont];
 		cont++;
 	}
-	ptr = dest;
-	return (ptr);
+	return (dest);
 }
 
 /* int	main(int argc, char *argv[])

@@ -9,24 +9,25 @@
 /*   Updated: 2023/04/18 14:08:32 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <libft.h>
+/* 
 #include <string.h>
+#include <stdio.h> */
+#include "libft.h"
 
 size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
 {
-	int	pos_dst;
-	int	pos_src;
-	int	cont;
-	int	orig_len_dst;
-	int	orig_len_src;
+	int		pos_dst;
+	int		pos_src;
+	size_t	cont;
+	size_t	orig_len_dst;
+	int		orig_len_src;
 
 	pos_dst = 0;
 	pos_src = 0;
 	cont = 0;
 	orig_len_dst = ft_strlen(dst);
 	orig_len_src = ft_strlen(src);
-	pos_dst = orig_len_dst + 1;
+	pos_dst = orig_len_dst;
 	while (src[pos_src] != '\0' && cont <= (size - orig_len_dst - 1))
 	{
 		dst[pos_dst] = src[pos_src];
@@ -38,3 +39,20 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
 		dst[pos_dst] = '\0';
 	return (orig_len_dst + orig_len_src);
 }
+
+/* int	main(int argc, char *argv[])
+{
+	size_t	n;
+	char	str1[20] = "str dest";
+	char	str2[20] = "str source";
+	//char	str3[] = "str dest";
+	//char	str4[] = "str source";
+
+	(void)argc;
+	(void)argv;
+	n = 5;
+
+	printf("LIBFT   : %u - %s\n", ft_strlcat(str1, str2, n), str1);
+	//printf("Standard: %u - %s\n", strlcat(str3, str4, n), str3);
+	return (0);
+} */

@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+/* #include <stdio.h>
+#include <ctype.h> */
+#include "libft.h"
 
 int	ft_tolower(int c)
 {
@@ -19,3 +21,15 @@ int	ft_tolower(int c)
 	else
 		return (c);
 }
+
+/* int	main(int argc, char *argv[])
+{
+	char c;
+
+	(void)argc;
+	c = (int)*argv[1];
+
+	printf("LIBFT   : %c\n", ft_tolower(c));
+	printf("Standard: %c\n", tolower(c));
+}
+ */

@@ -14,6 +14,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -28,20 +29,20 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	//((char *)dest)[cont] = '\0';
 	return (dest);
 }
-/* 
-int main(int argc, char *argv[])
+
+int	main(int argc, char *argv[])
 {
-	char src[10];
-	char dest1[10];
-	char dest2[10];
+	void	*dest[17];
+	void	*src1 = "string de prueba";
+	void	*src2 = "string de prueba";
+	size_t	n = 0;
 
-	strcpy(src, argv[1]);
-	printf("Valor de prueba: %s\n", src);
+	(void)argc;
+	(void)argv;
 
-	memmove(dest1, src, atoi(argv[2]));
-	printf("Resultado MEMMOVE: %s\n", dest1);
-
-	ft_memmove(dest1, src, atoi(argv[2]));
-	printf("Resultado LIBFT: %s\n", dest1);
+	ft_memmove(dest, src1, n);
+	printf("LIBFT   : %s\n", (char *)dest);
+	memmove(dest, src2, n);
+	printf("Standard: %s\n", (char *)dest);
 	return (0);
-} */
+}

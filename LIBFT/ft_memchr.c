@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,17 +14,15 @@
 #include <string.h> */
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int		pos;
-	int		str_len;
+	size_t	pos;
 
 	pos = 0;
-	str_len = ft_strlen(s) + 1;
-	while (pos <= str_len)
+	while (pos <= n)
 	{
-		if (s[pos] == c)
-			return ((char *)(&s[pos]));
+		if (((char *)s)[pos] == c)
+			return ((void *)(&((char *)s)[pos]));
 		pos++;
 	}
 	return (NULL);
@@ -33,8 +31,10 @@ char	*ft_strchr(const char *s, int c)
 /* int	main(int argc, char *argv[])
 {
 	(void)argc;
-	printf("LIBFT   : %s\n", ft_strchr(argv[1], (int)*argv[2]));
-	printf("Standard: %s\n", strchr(argv[1], (int)*argv[2]));
+//    printf("LIBFT   : %s\n", (char *)(ft_memchr(argv[1], (int)*argv[2], (size_t)*argv[3])));
+//    printf("Standard: %s\n", (char *)(memchr(argv[1], (int)*argv[2], (size_t)*argv[3])));
+    printf("LIBFT   : %s\n", (char *)(ft_memchr(argv[1], (int)*argv[2], 5)));
+    printf("Standard: %s\n", (char *)(memchr(argv[1], (int)*argv[2], 5)));
 
 	return (0);
 }
