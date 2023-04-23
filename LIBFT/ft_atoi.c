@@ -16,26 +16,14 @@
 int	ft_atoi(const char *str)
 {
 	int		pos;
-	char	c;
 	int		res;
 	int		num;
 
 	num = 0;
 	pos = 0;
-	while (str[pos] != '\0')
+	while ((str[pos] != '\0') && (ft_isdigit(str[pos]) == 1 || str[pos] == '.' || str[pos] == ','))
 	{
-		c = str[pos];
-		if (pos == 0)
-		{
-			if ((ft_isdigit(c) == 1) || (c == '-'))
-				continue ;
-			else
-				return (0);
-		}
-		else
-		{
-			num = num;
-		}
+
 		pos++;
 	}
 }
