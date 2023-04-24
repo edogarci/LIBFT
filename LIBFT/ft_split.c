@@ -117,5 +117,6 @@ int main(void)
 
     c = ',';
     ptr = ft_split("f1,f2,f3", c);
+    (void)ptr;
     return (0);
 }

@@ -16,21 +16,24 @@
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 127)
+	if (c >= 32 && c < 127)
 		return (1);
 	else
 		return (0);
 }
 
-/* int	main(int argc, char *argv[])
+/* int	main(void)
 {
 	int	c;
 
-	c = (int)*argv[1];
-	(void)argc;
+	c = 0;
 
-	printf("LIBFT   : %i\n", ft_isprint(c));
-	printf("Standard: %i\n", isprint(c));
+	while (c <= 127)
+	{
+		printf("Valor: %i (%c) - ", c, (char)c);
+		printf("LIBFT   : %i - ", ft_isprint(c));
+		printf("Standard: %i\n", isprint(c));
+		c++;
+	}
 	return (0);
-}
- */
+} */

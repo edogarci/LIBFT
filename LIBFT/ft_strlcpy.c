@@ -11,19 +11,19 @@
 /* ************************************************************************** */
 
 /* #include <stdio.h>
-#include <string.h> */
+#include <bsd/string.h> */
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int		pos_dst;
+	size_t	pos_dst;
 	size_t	pos_src;
-	int		cont_ret;
+	size_t	cont_ret;
 
 	pos_dst = 0;
 	pos_src = 0;
 	cont_ret = 0;
-	while (src[pos_src] != '\0' && pos_src < size)
+	while (src[pos_src] != '\0' && pos_src < (size - 1))
 	{
 		dst[pos_dst] = src[pos_src];
 		pos_dst++;
@@ -37,15 +37,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 /* int	main(int argc, char *argv[])
 {
-	size_t	n;
-	char	str1[10];
-	char	str2[10];
+	char	str1[1];
+	char	str2[1];
 
 	(void)argc;
-	n = 5;
+	(void)argv;
 
-	printf("LIBFT   : %u - %s\n", ft_strlcpy(str1, argv[1], n), str1);
-	printf("Standard: %u - %s\n", strlcpy(str2, argv[1], n), str2);
+	printf("LIBFT   : %lu - %s\n", ft_strlcpy(str1, "lorem ipsum dolor sit amet", 0), str1);
+	printf("Standard: %lu - %s\n",    strlcpy(str2, "lorem ipsum dolor sit amet", 0), str2);
 	return (0);
-}
- */
+} */

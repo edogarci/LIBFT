@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,30 +18,37 @@
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	cont;
+	char	*temp;
 
+	temp = NULL;
 	cont = 0;
 	while (cont < n)
 	{
-		((char *)dest)[cont] = ((char *)src)[cont];
+		temp[cont] = ((char *)src)[cont];
 		cont++;
 	}
-	//((char *)dest)[cont] = '\0';
+	cont = 0;
+	while (cont < n)
+	{
+		((char *)dest)[cont] = temp[cont];
+		cont++;
+	}
 	return (dest);
 }
 
-int	main(int argc, char *argv[])
+int	main(void)
 {
-	void	*dest[17];
-	void	*src1 = "string de prueba";
-	void	*src2 = "string de prueba";
-	size_t	n = 0;
+	void	*dest1[30];
+	void	*dest2[30];
+	void	*src1 = "123456";
+	void	*src2 = "123456";
+	size_t	n = 4;
 
-	(void)argc;
-	(void)argv;
+	ft_memmove(dest1, src1, n);
+	printf("LIBFT   : %s\n", (char *)dest1);
 
-	ft_memmove(dest, src1, n);
-	printf("LIBFT   : %s\n", (char *)dest);
-	memmove(dest, src2, n);
-	printf("Standard: %s\n", (char *)dest);
+	memmove(dest2, src2, n);
+	printf("Standard: %s\n", (char *)dest2);
+
 	return (0);
 }
