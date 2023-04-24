@@ -1,0 +1,340 @@
+edogarci@c1r8s1 00_LIBFT % paco
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                Welcome to Francinette, a 42 tester framework!                ║
+╚═══════════════════════╦══════════════════════════════╦═══════════════════════╝
+                        ║             libft            ║
+                        ╚══════════════════════════════╝
+✔ Preparing framework
+✖ Executing: norminette
+ft_atoi.c: Error!
+Error: LINE_TOO_LONG        (line:  24, col:   1):      line too long
+ft_bzero.c: OK!
+ft_isalnum.c: OK!
+ft_isalpha.c: OK!
+ft_isascii.c: OK!
+ft_isdigit.c: OK!
+ft_isprint.c: OK!
+ft_itoa.c: OK!
+ft_memchr.c: Error!
+Error: LINE_TOO_LONG        (line:  31, col:   1):      line too long
+Error: LINE_TOO_LONG        (line:  31, col:   1):      line too long
+ft_memcmp.c: Error!
+Error: SPC_AFTER_OPERATOR   (line:  36, col:  43):      missing space after operator
+Error: SPC_AFTER_OPERATOR   (line:  36, col:  51):      missing space after operator
+Error: SPC_BFR_PAR          (line:  36, col:  52):      Missing space before parenthesis (brace/bracket)
+Error: EMPTY_LINE_FUNCTION  (line:  37, col:   1):      Empty line in function
+ft_memcpy.c: OK!
+ft_memmove.c: Error!
+Error: WRONG_SCOPE_COMMENT  (line:  29, col:   5):      Comment is invalid in this scope
+Error: DECL_ASSIGN_LINE     (line:  36, col:  19):      Declaration and assignation on a single line
+Error: DECL_ASSIGN_LINE     (line:  37, col:  19):      Declaration and assignation on a single line
+Error: DECL_ASSIGN_LINE     (line:  38, col:  15):      Declaration and assignation on a single line
+Error: EMPTY_LINE_FUNCTION  (line:  42, col:   1):      Empty line in function
+ft_memset.c: OK!
+ft_split.c: Error!
+Error: INVALID_HEADER       (line:   1, col:   1):      Missing or invalid 42 header
+Error: SPACE_BEFORE_FUNC    (line:   4, col:  11):      space before function name
+Error: TOO_FEW_TAB          (line:   6, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:   6, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:   6, col:   8):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:   8, col:   5):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:   9, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:   9, col:   5):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  10, col:   1):      Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  10, col:   5):      Space on empty line
+Error: SPACE_REPLACE_TAB    (line:  11, col:   9):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  12, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  12, col:   9):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  13, col:   1):      Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  13, col:   5):      Space on empty line
+Error: TOO_FEW_TAB          (line:  14, col:   1):      Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  14, col:   5):      Space on empty line
+Error: TOO_FEW_TAB          (line:  15, col:   1):      Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  15, col:   5):      Space on empty line
+Error: TOO_FEW_TAB          (line:  16, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  16, col:   9):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  17, col:   1):      Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  17, col:   9):      Space on empty line
+Error: TOO_FEW_TAB          (line:  18, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  18, col:  13):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  19, col:  17):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  20, col:  13):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  21, col:   1):      Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  21, col:   9):      Space on empty line
+Error: SPACE_REPLACE_TAB    (line:  22, col:   9):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  23, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  23, col:   9):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  24, col:   1):      Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  24, col:   5):      Space on empty line
+Error: SPACE_BEFORE_FUNC    (line:  27, col:  12):      space before function name
+Error: TOO_FEW_TAB          (line:  29, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  29, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  29, col:   8):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  31, col:   5):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  32, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  32, col:   5):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  33, col:   1):      Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  33, col:   5):      Space on empty line
+Error: SPACE_REPLACE_TAB    (line:  34, col:   9):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  35, col:   9):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  36, col:   9):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  37, col:   1):      Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  37, col:   5):      Space on empty line
+Error: SPACE_REPLACE_TAB    (line:  38, col:   5):      Found space when expecting tab
+Error: WRONG_SCOPE_COMMENT  (line:  39, col:   1):      Comment is invalid in this scope
+Error: SPACE_BEFORE_FUNC    (line:  42, col:  12):      space before function name
+Error: TOO_FEW_TAB          (line:  44, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  44, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  44, col:   8):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  45, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  45, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  45, col:   8):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  46, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  46, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  46, col:   8):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  47, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  47, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  47, col:   8):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  48, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  48, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  48, col:   8):      Found space when expecting tab
+Error: WRONG_SCOPE_COMMENT  (line:  50, col:   1):      Comment is invalid in this scope
+Error: EMPTY_LINE_FUNCTION  (line:  56, col:   1):      Empty line in function
+Error: SPACE_REPLACE_TAB    (line:  57, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  58, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  59, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  60, col:   5):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  61, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  61, col:   5):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  62, col:   1):      Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  62, col:   5):      Space on empty line
+Error: TOO_FEW_TAB          (line:  63, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  63, col:   9):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  64, col:   1):      Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  64, col:   9):      Space on empty line
+Error: SPACE_REPLACE_TAB    (line:  65, col:  13):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  66, col:  13):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  67, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  67, col:  13):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  68, col:  13):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  69, col:  13):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  70, col:   1):      Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  70, col:   9):      Space on empty line
+Error: SPACE_REPLACE_TAB    (line:  71, col:   9):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  72, col:   9):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  73, col:   1):      Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  73, col:   5):      Space on empty line
+Error: SPACE_REPLACE_TAB    (line:  74, col:   5):      Found space when expecting tab
+Error: WRONG_SCOPE_COMMENT  (line:  75, col:   1):      Comment is invalid in this scope
+Error: TOO_MANY_LINES       (line:  78, col:   1):      Function has more than 25 lines
+Error: SPACE_BEFORE_FUNC    (line:  80, col:   5):      space before function name
+Error: TOO_FEW_TAB          (line:  82, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  82, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  82, col:   8):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  83, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  83, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  83, col:   8):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  84, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  84, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  84, col:   9):      Found space when expecting tab
+Error: MISALIGNED_VAR_DECL  (line:  84, col:  10):      Misaligned variable declaration
+Error: SPACE_EMPTY_LINE     (line:  86, col:   5):      Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  86, col:   5):      Comment is invalid in this scope
+Error: SPACE_EMPTY_LINE     (line:  87, col:   5):      Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  87, col:   5):      Comment is invalid in this scope
+Error: SPACE_REPLACE_TAB    (line:  88, col:   5):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  89, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  89, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  90, col:   9):      Found space when expecting tab
+Error: EMPTY_LINE_FUNCTION  (line:  91, col:   1):      Empty line in function
+Error: SPACE_EMPTY_LINE     (line:  92, col:   5):      Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  92, col:   5):      Comment is invalid in this scope
+Error: SPACE_EMPTY_LINE     (line:  93, col:   5):      Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  93, col:   5):      Comment is invalid in this scope
+Error: SPACE_EMPTY_LINE     (line:  94, col:   5):      Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  94, col:   5):      Comment is invalid in this scope
+Error: SPACE_REPLACE_TAB    (line:  95, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  96, col:   5):      Found space when expecting tab
+Error: EMPTY_LINE_FUNCTION  (line:  97, col:   1):      Empty line in function
+Error: SPACE_EMPTY_LINE     (line:  98, col:   5):      Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  98, col:   5):      Comment is invalid in this scope
+Error: SPACE_EMPTY_LINE     (line:  99, col:   5):      Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  99, col:   5):      Comment is invalid in this scope
+Error: SPACE_EMPTY_LINE     (line: 100, col:   5):      Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line: 100, col:   5):      Comment is invalid in this scope
+Error: TOO_FEW_TAB          (line: 101, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line: 101, col:   5):      Found space when expecting tab
+Error: WRONG_SCOPE_COMMENT  (line: 102, col:   1):      Comment is invalid in this scope
+Error: SPACE_EMPTY_LINE     (line: 109, col:   5):      Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line: 109, col:   5):      Comment is invalid in this scope
+Error: TOO_FEW_TAB          (line: 110, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line: 110, col:   5):      Found space when expecting tab
+Error: SPACE_BEFORE_FUNC    (line: 113, col:   4):      space before function name
+Error: TOO_FEW_TAB          (line: 115, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line: 115, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line: 115, col:   9):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line: 116, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line: 116, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line: 116, col:   9):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line: 118, col:   5):      Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line: 119, col:   5):      Found space when expecting tab
+Error: TOO_FEW_TAB          (line: 120, col:   1):      Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line: 120, col:   5):      Found space when expecting tab
+Error: BRACE_SHOULD_EOL     (line: 121, col:   1):      Expected newline after brace
+ft_strchr.c: OK!
+ft_strjoin.c: OK!
+ft_strlcat.c: OK!
+ft_strlcpy.c: OK!
+ft_strlen.c: OK!
+ft_strncmp.c: Error!
+Error: EMPTY_LINE_FUNCTION  (line:  37, col:   1):      Empty line in function
+Error: BRACE_SHOULD_EOL     (line:  39, col:   1):      Expected newline after brace
+ft_strnstr.c: Error!
+Error: LINE_TOO_LONG        (line:  59, col:   1):      line too long
+Error: LINE_TOO_LONG        (line:  59, col:  90):      line too long
+Error: LINE_TOO_LONG        (line:  60, col:   1):      line too long
+Error: LINE_TOO_LONG        (line:  60, col:  87):      line too long
+ft_strrchr.c: OK!
+ft_strtrim.c: OK!
+ft_substr.c: OK!
+ft_tolower.c: OK!
+ft_toupper.c: OK!
+libft.h: OK!
+
+✔ Executing: make fclean all (no bonus)
+ℹ Executing: libft-war-machine (https://github.com/y3ll0w42/libft-war-machine)
+--------------------------------------------------------------------------------
+|                              COMPILING LIBFT                                 |
+--------------------------------------------------------------------------------
+rules:
+all        $(NAME)       fclean       re           clean       bonus     libft.a
+ok         ok            ok           ok           ok          missing   found
+
+FUNCTION         TESTS                RESULT
+ft_isalpha       ✓✓✓✓✓✓✓              OK
+ft_isdigit       ✓✓✓✓✓✓✓              OK
+ft_isalnum       ✓✓✓✓✓✓✓              OK
+ft_isascii       ✓✓✓✓✓✓✓✓             OK
+ft_isprint       ✓✓✓✓✓✓✗              KO
+ft_strlen        ✓✓✓✓✓✓               OK
+ft_memset        ✓✓✓✓                 OK
+ft_bzero         ✓✓                   OK
+ft_memcpy        ✓✓✓                  OK
+ft_memmove       compil. failed       KO
+ft_strlcpy       ✓✓✗✗✓                KO
+ft_strlcat       ✓✓✓✗✗✗✗✗✗            KO
+ft_toupper       ✓✓✓✓✓✓✓              OK
+ft_tolower       ✓✓✓✓✓✓✓              OK
+ft_strchr        ✓✓✓✓✓✓               OK
+ft_strrchr       ✓✓✓✓✓✓✓✓             OK
+ft_strncmp       compil. failed       KO
+ft_memchr        ✓✓✗✓✓✓               KO
+ft_memcmp        compil. failed       KO
+ft_strnstr       ✗✗✗✗✓✗✓✓✓✓           KO
+ft_atoi          ✓✗✗✗✗✗✓✓✓✓✗✗✓✗✗✗✓✗✓  KO
+ft_substr        AAAA✗                KO
+ft_strjoin       AAAA                 KO
+ft_split         compil. failed       KO
+ft_itoa          AAAAAAAAAA           KO
+
+Abort: A  Bus error: B  Segmentation fault: S  Timeout: T
+
+More information in: /Users/edogarci/francinette/temp/libft/war-machine/deepthought
+
+Errors in isprint: /Users/edogarci/francinette/temp/libft/war-machine/tests/Part1_functions/ft_isprint
+Test 7:
+    i = 123;
+    while (i <= 127)
+    {
+        ft_print_result(ft_isprint(i));
+        i++;
+    }
+Expected (cat -e test07.output):
+11110
+Your result (cat -e user_output_test07):
+11111
+Errors in strlcpy: /Users/edogarci/francinette/temp/libft/war-machine/tests/Part1_functions/ft_strlcpy
+Test 3:
+    ft_print_result(ft_strlcpy(dest, "lorem ipsum", 3));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+Expected (cat -e test03.output):
+11$
+lo^@rrr^@^@^@^@^@^@^@^@^@
+Your result (cat -e user_output_test03):
+11$
+lor^@rr^@^@^@^@^@^@^@^@^@
+Test 4:
+    ft_print_result(ft_strlcpy(dest, "lorem ipsum dolor sit amet", 15));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+Expected (cat -e test04.output):
+26$
+lorem ipsum do^@
+Your result (cat -e user_output_test04):
+26$
+lorem ipsum dol
+Errors in strlcat: /Users/edogarci/francinette/temp/libft/war-machine/tests/Part1_functions/ft_strlcat
+Test 4:
+    dest[14] = 'a';
+    ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 15));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+Expected (cat -e test04.output):
+32$
+rrrrrrlorem ip^@
+Your result (cat -e user_output_test04):
+32$
+rrrrrrlorem ips
+Test 5:
+    dest[10] = 'a';
+    ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 0));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+...
+
+File too large. To see full report open: /Users/edogarci/francinette/temp/libft/war-machine/errors.log
+
+✖ Compiling tests: libftTester (https://github.com/Tripouille/libftTester)
+duplicate symbol '_main' in:
+    ft_memmove_test.o
+    ./libft.a(ft_memmove.o)
+ld: 1 duplicate symbol for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Problem creating executable for memmove
+✖ Compiling tests: libft-unit-test (https://github.com/alelievr/libft-unit-test)
+make[1]: *** No rule to make target `bonus'.  Stop.
+duplicate symbol '_main' in:
+    assets/tmp/ft_memcmp.o
+    assets/tmp/ft_memmove.o
+duplicate symbol '_main' in:
+    assets/tmp/ft_memcmp.o
+    assets/tmp/ft_split.o
+duplicate symbol '_main' in:
+    assets/tmp/ft_memcmp.o
+    assets/tmp/ft_strncmp.o
+ld: 3 duplicate symbols for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [libft.so] Error 1
+
+Problem compiling tests
+✖ Compiling tests: fsoares (my own)
+duplicate symbol '_main' in:
+    /var/folders/zz/zyxvpxvq6csfxvn_n000cjn00034d8/T/test_memmove-797a4b.o
+    ./libft.a(ft_memmove.o)
+ld: 1 duplicate symbol for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Problem compiling the tests
+
+Summary: no bonus
+
+Norminette Errors: ft_atoi.c, ft_memchr.c, ft_memcmp.c, ft_memmove.c, ft_split.c, ft_strncmp.c, ft_strnstr.c
+
+Missing functions: calloc, strdup, strtrim, strmapi, striteri, putchar_fd, putstr_fd, putendl_fd, putnbr_fd
+
+Failed tests: atoi, libft-unit-test, memchr, strnstr, strlcpy, strlcat, fsoares, strjoin, isprint, libftTester, substr, itoa
+
+Passed tests: isalpha, isdigit, isalnum, isascii, strlen, memset, bzero, memcpy, memmove, toupper, tolower, strchr, strrchr, strncmp, memcmp, split
+edogarci@c1r8s1 00_LIBFT % 
