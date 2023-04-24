@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 14:43:05 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/20 18:00:00 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/24 12:36:58 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 #include "libft.h"
 
 int	ft_atoi(const char *str)
+{
+	int	a;
+
+	(void)str;
+	a = 0;
+	return (a);
+}
+/* int	ft_atoi(const char *str)
 {
 	int		pos;
 	int		res;
@@ -27,3 +35,4 @@ int	ft_atoi(const char *str)
 		pos++;
 	}
 }
+ */

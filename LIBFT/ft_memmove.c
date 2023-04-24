@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 13:13:22 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/20 17:54:17 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/24 12:24:32 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int	cont;
+	size_t	cont;
 
 	cont = 0;
 	while (cont < n)

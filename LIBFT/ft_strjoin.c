@@ -6,12 +6,13 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 19:54:44 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/18 20:04:17 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/24 12:25:26 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <stddef.h>
+#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

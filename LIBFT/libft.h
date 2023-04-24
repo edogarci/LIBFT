@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 12:00:25 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/20 21:14:30 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/24 10:55:57 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 //DUDOSO
 void	*ft_memmove(void *dest, const void *src, size_t n);
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t size);
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size);
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+
 //
 int		ft_toupper(int c);
 int		ft_tolower(int c);

@@ -6,12 +6,22 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:42:07 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/20 17:47:57 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/24 12:35:42 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+char	*ft_itoa(int n)
+{
+	char	*ptr;
+
+	ptr = NULL;
+	(void)n;
+	return (ptr);
+}
+
+/* 
 static char	get_if_num_is_neg(int n)
 {
 	if (n < 0)
@@ -76,6 +86,7 @@ static void	pass_int_to_str(char *ptr, int n, int num_of_digits)
 	}
 	ptr[pos] = '\0';
 	//reverse the string
+	return (NULL);
 }
 
 char	*ft_itoa(int n)
@@ -93,9 +104,10 @@ char	*ft_itoa(int n)
 	else
 		ptr = malloc((num_of_digits) * sizeof(int));
 	pass_int_to_str(ptr, n, num_of_digits);
+	return (ptr);
 }
 
-/* int	main(void)
+int	main(void)
 {
 	int		num;
 	char	*str;

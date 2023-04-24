@@ -6,15 +6,15 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:11:36 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/18 14:08:32 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/24 12:26:29 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/* 
+
 #include <string.h>
-#include <stdio.h> */
+#include <stdio.h>
 #include "libft.h"
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	int		pos_dst;
 	int		pos_src;

@@ -1,6 +1,6 @@
 NAME = libft.a
 
-SOURCE = ft_tolower.c
+SOURCE = $(wildcard ./*.c)
 
 FLAGS = -Wall -Wextra -Werror
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:31:04 by ncolomer          #+#    #+#             */
-/*   Updated: 2019/10/10 00:34:34 by ncolomer         ###   ########.fr       */
+/*   Updated: 2023/04/24 12:38:03 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*ptr;
+
+	ptr = NULL;
+	(void)s1;
+	(void)set;
+	return (ptr);
+}
+/* 
 static int
 	ft_char_in_set(char c, char const *set)
 {
@@ -98,4 +108,4 @@ int main(void)
 	printf("Cadena strtrim1: %s\n", ft_strtrim(str1, set));
 	//printf("Cadena strtrim2: %s\n", ft_strtrim2(str2, set));
 	return (0);
-}
+} */
