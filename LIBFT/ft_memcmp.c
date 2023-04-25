@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 16:18:32 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/22 16:18:32 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/25 15:33:25 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,23 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	int	pos;
 
 	pos = 0;
-	while (((char *)s1)[pos] != '\0' && ((char *)s2)[pos] != '\0' && n > 0)
+	while (n > 0)
 	{
-		if (((char *)s1)[pos] != ((char *)s2)[pos])
-			return ((int)((char *)s1)[pos] - (int)((char *)s2)[pos]);
+		if (((char *)s1)[pos] > ((char *)s2)[pos])
+			//return ((int)((char *)s1)[pos] - (int)((char *)s2)[pos]);
+			return (1);
+		else if (((char *)s1)[pos] < ((char *)s2)[pos])
+			return (-1);
 		n--;
 		pos++;
 	}
 	return (0);
 }
 
-int	main(int argc, char *argv[])
+/* int	main(void)
 {
-	(void)argc;
-	printf("LIBFT   : %i\n", ft_memcmp(argv[1], argv[2], (size_t)argv[3]));
-	printf("Standard: %i\n", memcmp(argv[1],argv[2],(size_t)argv[3]));
-
+	printf("LIBFT   : %i\n", ft_memcmp("t\200", "t\0", 6));
+	printf("Standard: %i\n", memcmp("t\200", "t\0", 6));
 	return (0);
 }
+ */

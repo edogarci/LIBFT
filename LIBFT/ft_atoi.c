@@ -6,33 +6,32 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 14:43:05 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/24 12:36:58 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/25 15:50:17 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int	a;
+	int	pos;
+	int	num;
 
-	(void)str;
-	a = 0;
-	return (a);
-}
-/* int	ft_atoi(const char *str)
-{
-	int		pos;
-	int		res;
-	int		num;
-
-	num = 0;
 	pos = 0;
-	while ((str[pos] != '\0') && (ft_isdigit(str[pos]) == 1 || str[pos] == '.' || str[pos] == ','))
+	while (str[pos] != '\0' && (str[pos] >= '0' && str[pos] <= '9'))
 	{
-
+		num = num * 10 + (str[pos] - '0');
 		pos++;
 	}
+	return (num);
 }
- */
+
+int	main(void)
+{
+	char str[] = "-4886";
+
+	printf("LIBFT   : %i\n", ft_atoi(str));
+	printf("Standard: %i\n", atoi(str));
+}
