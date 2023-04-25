@@ -14,24 +14,51 @@
 #include <stdlib.h>
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+static int find_first_valid_pos(const char *str)
 {
 	int	pos;
-	int	num;
 
 	pos = 0;
+	while (str[pos] == ' ' || str[pos] == '\t' || str[pos] == '\v' || 
+		str[pos] == '\n' || str[pos] == '\r' || str[pos] == '\f')
+	{
+		pos++;
+	}
+	return (pos);
+}
+
+int	ft_atoi(const char *str)
+{
+	int		pos;
+	int		num;
+	char	neg_flag;
+
+	pos = find_first_valid_pos(str);
+	if (str[pos] == '-')
+	{
+		neg_flag = 'X';
+		pos++;
+	}
+	else if (str[pos] == '+')
+	{
+		neg_flag = ' ';
+		pos++;
+	}
 	while (str[pos] != '\0' && (str[pos] >= '0' && str[pos] <= '9'))
 	{
 		num = num * 10 + (str[pos] - '0');
 		pos++;
 	}
-	return (num);
+	if (neg_flag == 'X')
+		return (num * -1);
+	else
+		return (num);
 }
 
-int	main(void)
+/* int	main(void)
 {
-	char str[] = "-4886";
+	char str[] = "ad28";
 
 	printf("LIBFT   : %i\n", ft_atoi(str));
 	printf("Standard: %i\n", atoi(str));
-}
+} */
