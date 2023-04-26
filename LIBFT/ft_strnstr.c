@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 17:54:49 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/24 12:34:42 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:56:39 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,48 +16,44 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*ptr;
+	size_t	pos_nee;
+	size_t	pos_hay;
 
-	(void)haystack;
-	(void)needle;
-	(void)len;
-	ptr = NULL;
-	return (ptr);
-}
-/* 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
-{
-	int		pos_nee;
-	int		pos_hay;
-	char	*ptr;
-
-	(void)len;
-	pos_hay = 0;
 	pos_nee = 0;
+	pos_hay = 0;
+	if (((char *)needle)[pos_nee] == '\0')
+		return ((char *)haystack);
 	while (needle[pos_nee] != '\0')
 	{
-		while (haystack[pos_hay] != '\0')
+		while (haystack[pos_hay] != '\0' && needle[pos_nee] != '\0')
 		{
-			if (haystack[pos_hay] != needle[pos_nee])
-				pos_hay++;
+			if (len == pos_hay)
+				return (NULL);
+			if (needle[pos_nee] == haystack[pos_hay])
+			{
+				if (pos_nee == ft_strlen(needle) - 1)
+					return ((char *)haystack + pos_hay - ft_strlen(needle) + 1);
+				else
+				{
+					pos_nee++;
+					pos_hay++;
+				}
+			}
 			else
 			{
+				pos_nee = 0;
 				pos_hay++;
-				pos_nee++;
 			}
 		}
 	}
-	return (ptr);
+	return (NULL);
 }
 
-int	main(int argc, char *argv[])
+int	main(void)
 {
-	(void)argc;
-	(void)argv;
-	printf("LIBFT   : %i\n", ft_strnstr(argv[1], argv[2], (size_t)argv[3]));
-	printf("Standard: %i\n", strnstr(argv[1], argv[2], (size_t)argv[3]));*/
-	//printf("LIBFT   : %s\n", ft_strnstr("edorta esta programando", "esta", (size_t)50));
-	//printf("Standard: %s\n", strnstr("edorta esta programando", "esta", (size_t)50));
+	size_t	n;
 
-//	return (0);
-//}
+	n = 30;
+	printf("LIBFT   : %s\n", ft_strnstr("lorem ipsum dolor sit amet", "ipsumm", n));
+	printf("Standard: %s\n", strnstr("lorem ipsum dolor sit amet", "ipsumm", n));
+}
