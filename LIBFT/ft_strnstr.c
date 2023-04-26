@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+/* #include <string.h>
+#include <stdio.h> */
 #include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
@@ -23,37 +23,34 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	pos_hay = 0;
 	if (((char *)needle)[pos_nee] == '\0')
 		return ((char *)haystack);
-	while (needle[pos_nee] != '\0')
+	while (haystack[pos_hay] != '\0' && needle[pos_nee] != '\0')
 	{
-		while (haystack[pos_hay] != '\0' && needle[pos_nee] != '\0')
+		if (len == pos_hay)
+			return (NULL);
+		if (needle[pos_nee] == haystack[pos_hay])
 		{
-			if (len == pos_hay)
-				return (NULL);
-			if (needle[pos_nee] == haystack[pos_hay])
-			{
-				if (pos_nee == ft_strlen(needle) - 1)
-					return ((char *)haystack + pos_hay - ft_strlen(needle) + 1);
-				else
-				{
-					pos_nee++;
-					pos_hay++;
-				}
-			}
+			if (pos_nee == ft_strlen(needle) - 1)
+				return ((char *)haystack + pos_hay - ft_strlen(needle) + 1);
 			else
 			{
-				pos_nee = 0;
+				pos_nee++;
 				pos_hay++;
 			}
+		}
+		else
+		{
+			pos_nee = 0;
+			pos_hay++;
 		}
 	}
 	return (NULL);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	size_t	n;
 
 	n = 30;
-	printf("LIBFT   : %s\n", ft_strnstr("lorem ipsum dolor sit amet", "ipsumm", n));
-	printf("Standard: %s\n", strnstr("lorem ipsum dolor sit amet", "ipsumm", n));
-}
+	printf("LIBFT   : %s\n", ft_strnstr("lorem ipsum dolor sit amet", "ipsum", n));
+	//printf("Standard: %s\n", strnstr("lorem ipsum dolor sit amet", "ipsumm", n));
+} */
