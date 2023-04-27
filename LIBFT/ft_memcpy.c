@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 12:25:56 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/20 21:14:19 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:08:12 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	size_t	cont;
 
 	cont = 0;
-	while (cont < n)
+	while ((cont < n) && ((dest != (void *)0) || (src != (void *)0)))
 	{
 		((char *)dest)[cont] = ((char *)src)[cont];
 		cont++;
@@ -31,18 +31,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 /* int	main(int argc, char *argv[])
 {
-	void	*dest[17];
-	void	*src1 = "string de prueba";
-	void	*src2 = "string de prueba";
-	size_t	n = 0;
-
 	(void)argc;
 	(void)argv;
 
-	ft_memcpy(dest, src1, n);
-	printf("LIBFT   : %s\n", (char *)dest);
-	memcpy(dest, src2, n);
-	printf("Standard: %s\n", (char *)dest);
+	printf("LIBFT   : %s\n", (char *)ft_memcpy(((void *)0), "segfaulter tu dois", 17));
+	printf("Standard: %s\n", (char *)memcpy(((void *)0), "segfaulter tu dois", 17));
 	return (0);
 }
  */

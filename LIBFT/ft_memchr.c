@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:54:34 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/25 15:14:58 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/27 19:03:55 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	pos = 0;
 	while (pos < n)
 	{
-		if (((char *)s)[pos] == c)
+		if (((char *)s)[pos] == (char)c)
 			return ((void *)(&((char *)s)[pos]));
 		pos++;
 	}

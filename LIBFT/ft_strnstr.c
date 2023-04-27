@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 17:54:49 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/26 16:56:39 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/27 19:33:28 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 /* int	main(void)
 {
-	size_t	n;
-
-	n = 30;
-	printf("LIBFT   : %s\n", ft_strnstr("lorem ipsum dolor sit amet", "ipsum", n));
-	//printf("Standard: %s\n", strnstr("lorem ipsum dolor sit amet", "ipsumm", n));
-} */
+	printf("LIBFT   : %s\n", ft_strnstr("lorem ipsum dolor sit amet", "abcd", 9));
+}
+ */

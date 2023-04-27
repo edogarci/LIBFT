@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:54:34 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/18 14:41:05 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/04/27 19:37:02 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,18 @@ char	*ft_strchr(const char *s, int c)
 	{
 		if (s[pos] == c)
 			return ((char *)(&s[pos]));
-		pos++;
+		else if (s[pos] == '\0')
+			return (NULL);
+		else
+			pos++;
 	}
 	return (NULL);
 }
 
-/* int	main(int argc, char *argv[])
+/* int	main(void)
 {
-	(void)argc;
-	printf("LIBFT   : %s\n", ft_strchr(argv[1], (int)*argv[2]));
-	printf("Standard: %s\n", strchr(argv[1], (int)*argv[2]));
-
+	printf("LIBFT   : %s\n", ft_strchr("teste", '\0'));
+	printf("Standard: %s\n", strchr("teste", '\0'));
 	return (0);
 }
  */
