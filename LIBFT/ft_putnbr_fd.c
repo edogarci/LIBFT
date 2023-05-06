@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 16:29:37 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/04 09:41:58 by edogarci         ###   ########.fr       */
+/*   Created: 2023/05/04 17:56:28 by edogarci          #+#    #+#             */
+/*   Updated: 2023/05/05 11:54:18 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+/* #include <unistd.h>
+#include <fcntl.h>
 
 static int	get_number_len(int n)
 {
@@ -26,8 +28,6 @@ static int	get_number_len(int n)
 		n = n / 10;
 		cont++;
 	}
-/* 	if (cont == 0)
-		cont = 1; */
 	if (neg == 'X')
 		return (cont + 1);
 	else
@@ -54,9 +54,6 @@ static void	iterate_number(int n, int len, char *str)
 		neg_flag = 'X';
 	str[len] = '\0';
 	len--;
-/* 	if (n == 0)
-		str[len] = '0'; */
-/* 	while (n % 10 != 0) */
 	while ((neg_flag == ' ' && len >= 0)
 		|| (neg_flag == 'X' && len > 0))
 	{
@@ -82,10 +79,30 @@ char	*ft_itoa(int n)
 	return (ptr_ret);
 }
 
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	pos;
+
+	pos = 0;
+    while (s[pos] != '\0')
+    {
+    	write(fd, &(s[pos]), 1);
+		pos++;
+    }
+} */
+
+void    ft_putnbr_fd(int n, int fd)
+{
+    char    *num;
+
+    num = ft_itoa(n);
+    ft_putstr_fd(num, fd);
+}
+
 /* int main(void)
 {
-	char *ptr;
-	
-	ptr = ft_itoa(-1234);
-	return (0);
+    int fd;
+    fd = open("test", O_WRONLY);
+    ft_putnbr_fd(0, fd);
+    return (0);
 } */

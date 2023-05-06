@@ -10,36 +10,50 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+/* #include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> */
 #include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	cont;
+	int	cont;
 
-	if ((dest == ((void *)0)) || (src == ((void *)0)))
+	if (!dest && !src)
 		return (NULL);
-	cont = 0;
-	while ((cont < n) && (src != ((void *)0)))
+	if ((src < dest) && ((src + (int)n) > dest))
 	{
-		((char *)dest)[cont] = ((const char *)src)[cont];
-		cont++;
+		cont = (int)n - 1;	
+		while (cont >= 0)
+		{
+			((char *)dest)[cont] = ((const char *)src)[cont];
+			cont--;
+		}
+	}
+	else
+	{
+		cont = 0;	
+/* 		while ((cont < (int)n) && (src != ((void *)0))) */
+		while (cont < (int)n)
+		{
+			((char *)dest)[cont] = ((const char *)src)[cont];
+			cont++;
+		}
 	}
 	return (dest);
 }
 
 /* int	main(void)
 {
-	char	*dest1;
 	size_t	n;
+	char	*dest;
 	char	src[] = "lorem ipsum dolor sit amet";
+	char	*dest2;
+	char	src2[] = "lorem ipsum dolor sit amet";
 
-	dest1 = src + 1;
-	n = 8;
-	memmove(dest1, src, n);
-	printf("LIBFT: %s\n", dest1);
+	n = 5;
+	dest = src + 6;
+	ft_memmove(((void *)0), ((void *)0), n);
+	printf("libft: %s\n", dest);
 	return (0);
-}
- */
+} */

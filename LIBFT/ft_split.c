@@ -1,122 +1,152 @@
-#include <stdlib.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/02 21:16:02 by edogarci          #+#    #+#             */
+/*   Updated: 2023/05/05 18:30:01 by edogarci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static int get_num_of_substr(char const *s, char c, int pos)
+#include "libft.h"
+
+static int	get_amount_of_substr(char const *s, char c)
 {
-    int cont;
+	int	amount;
+	int	pos;
+	int len;
 
-    cont = 0;
-    if (s[pos] == '\0')
-    {
-        cont = 1;
-        return (cont);
-    }
-    else
-    {
-        while (pos >= 0)
-        {
-            if (s[pos] == c || s[pos] == '\0')
-                cont++;
-            pos--;
-        }
-        cont++;
-        return (cont);
-    }
+	amount = 0;
+	if (s)
+	{
+/* 		pos = 1;
+		len = ft_strlen(s);
+		amount = 0;
+		while (pos <= len)
+		{
+			if (((s[pos] != c) && (s[pos - 1] == c))
+				|| (s[pos] == '\0' && s[pos -1] != c))
+				amount++;
+			pos++;
+		} */
+		len = ft_strlen(s);
+		pos = 1;
+		while (pos <= len)
+		{
+			if ((s[pos] == c || s[pos] == '\0')
+				&& (s[pos - 1] != c))
+				amount++;
+			pos++;
+		}
+	}
+	return (amount);
 }
 
-static void assign_substr_to_ptr(char const *s, char *ptr, int start, int end)
+static int get_substr_len(char *str, char delimiter, int *real_len)
 {
-    int cont;
+	int	pos;
+	int cont;
+	int	len;
 
-    cont = 0;
-    while (start < end)
-    {
-        ptr[cont] = s[start];
-        start++;
-        cont++;
-    }
-    ptr[cont] = '\0';
-//    printf("Substr: %s\n", ptr);
+	cont = 0;
+	pos = 0;
+	len = ft_strlen(str); //"   ipsum "
+	while (pos <= len)
+	{
+		if (pos == 0)
+		{
+			if (str[pos] != delimiter && str[pos] != '\0')
+				cont++;	
+		}
+		else
+		{
+			if ((str[pos] == delimiter || str[pos] == '\0')
+				&& (str[pos - 1] != delimiter))
+			{
+				//cont++;
+				//pos++;
+				break ;
+			}
+			else
+			{
+				if (str[pos] != delimiter && str[pos] != '\0')
+				{
+					cont++;
+				}
+			}
+		}
+		pos++;
+	}
+/* 	while (!((str[pos] == delimiter) && (str[pos - 1] != delimiter)))
+	{
+		if (str[pos] != delimiter)
+			cont++;
+		pos++;
+		if (str[pos] == '\0')
+			break ;
+	} */
+	*real_len = pos;
+	return (cont);
 }
 
-static void split_substrs(char const *s, char del, char **ptr, int len)
+static void assign_substr(char *dst, char *src, int len, char c)
 {
-    int start;
-    int end;
-    int cont;
-    int pos;
-    int size;
+	int pos;
+	int cont;
 
-/*    ptr[0] = "split 1";
-    ptr[1] = "split 2";
-    ptr[2] = "split 3";
-    printf("%s\n", ptr[0]);
-    printf("%s\n", ptr[1]);
-    printf("%s\n", ptr[2]);*/
-
-    pos = 0;
-    cont = 0;
-    start = 0;
-    end = 0;
-    while (pos <= len)
-    {
-        if (s[pos] == del || s[pos] == '\0')
-        {
-            size = end - start;
-            ptr[cont] = malloc((size + 1) * sizeof(char));
-            assign_substr_to_ptr(s, ptr[cont], start, end);
-            cont++;
-            start = end + 1;
-        }
-        end++;
-        pos++;
-    }
-    ptr[cont] = NULL;
-/*    printf("%s\n", ptr[0]);
-    printf("%s\n", ptr[1]);
-    printf("%s\n", ptr[2]);*/
+	cont = 0;
+	pos = 0;
+	while (cont < len)
+	{
+		if (src[pos] != c)
+		{
+			dst[cont] = src[pos];
+			cont++;
+		}
+		pos++;
+	}
+	dst[cont] = '\0';
 }
 
 char **ft_split(char const *s, char c)
 {
-    int num_sub_strs;
-    int s_len;
-    char **ptr_arrays;
+    char    **ptr_ret;
+	int		substrs_amount;
+	int		cont;
+	int		substr_len;
+	char	*ptr_substr;
+	int		*ptr_real_len;
+	int		real_len;
 
-    //obtenemos longitud del string
-    //SUSTITUIR con ft_strlen
-    s_len = 0;
-    while (s[s_len] != '\0')
-        s_len++;
-
-    //obtener numero de substrings para reservar
-    //malloc del puntero principal
-    //+1 para un puntero NULL
-    num_sub_strs = get_num_of_substr(s, c, s_len);
-    ptr_arrays = malloc(num_sub_strs * sizeof(char *));
-
-    //recorremos el string, separando substrings
-    //y asignadolo en los distintos espacios del
-    //ptr de arrays
-    split_substrs(s, c, ptr_arrays, s_len);
-/*    ptr_arrays[0] = "test1";
-    ptr_arrays[1] = "edorta";
-    ptr_arrays[2] = "paco";
-    printf("%s\n", ptr_arrays[0]);
-    printf("%s\n", ptr_arrays[1]);
-    printf("%s\n", ptr_arrays[2]);
-*/
-    //retornamos el puntero de arrays
-    return (ptr_arrays);
+	ptr_real_len = &real_len;
+	substrs_amount = get_amount_of_substr(s, c);
+	if (!s)
+		return (NULL);
+	ptr_ret = malloc(substrs_amount * sizeof(char *));
+	if (ptr_ret)
+	{
+		cont = 0;
+		ptr_substr = (char *)s;
+		while (cont < (int)substrs_amount)
+		{
+			substr_len = get_substr_len(ptr_substr, c, ptr_real_len);
+			ptr_ret[cont] = (char *)malloc((substr_len + 1) * sizeof(char));
+			assign_substr(ptr_ret[cont], ptr_substr, substr_len, c);
+			ptr_substr = ptr_substr + real_len;
+			cont++;
+		}
+	}
+	return (ptr_ret);
 }
 
-int main(void)
+/* int main(void)
 {
-    char c;
-    char **ptr;
+    char    **ptr;
+	char	s[] = "split  ||this|for|me|||||!|";
+	char	del = '|';
 
-    c = ',';
-    ptr = ft_split("f1,f2,f3", c);
-    (void)ptr;
-    return (0);
-}
+	ptr = ft_split(s, del);
+	return (0);
+} */

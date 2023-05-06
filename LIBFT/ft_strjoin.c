@@ -5,39 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 19:54:44 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/24 12:25:26 by edogarci         ###   ########.fr       */
+/*   Created: 2023/05/02 17:53:12 by edogarci          #+#    #+#             */
+/*   Updated: 2023/05/02 19:28:19 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
+#include <stdio.h>
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char    *ft_strjoin(char const *s1, char const *s2)
 {
-	char	*ptr_ret;
-	int		pos;
-	int		pos_ret;
+    char    *ptr_ret;
+	int		len_s1;
+	int		len_s2;
 
-	ptr_ret = malloc((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char));
-	if (ptr_ret != NULL)
-	{
-		pos = 0;
-		pos_ret = 0;
-		while (s1[pos] != '\0')
-		{
-			ptr_ret[pos_ret] = s1[pos];
-			pos_ret++;
-			pos++;
-		}
-		pos = 0;
-		while (s2[pos] != '\0')
-		{
-			ptr_ret[pos_ret] = s2[pos];
-			pos_ret++;
-			pos++;
-		}
-	}
+	len_s1 = (int)ft_strlen(s1);
+	len_s2 = (int)ft_strlen(s2);
+	
+	if (!s1 && !s2)
+		return (NULL);
+	ptr_ret = (char *)malloc((len_s1 + len_s2 + 1) * sizeof(char));
+	if (!ptr_ret)
+		return (NULL);
+	ft_strlcat(ptr_ret, s1, len_s1 + 1);
+	ft_strlcat(ptr_ret, s2, len_s1 + len_s2 + 1);
 	return (ptr_ret);
 }
+
+/* int main(void)
+{
+	char	s1[] = "lorem ipsum";
+	char	s2[] = "dolor sit amet";
+	char	*strjoin;
+	
+	s2[0] = '\0';
+	strjoin = ft_strjoin(s1, s2);
+	printf("%s\n", strjoin);
+	return (0);
+} */

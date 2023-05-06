@@ -5,33 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 19:20:11 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/18 19:58:23 by edogarci         ###   ########.fr       */
+/*   Created: 2023/05/02 15:07:11 by edogarci          #+#    #+#             */
+/*   Updated: 2023/05/02 17:16:44 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <libft.h>
-#include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char    *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*ptr_ret;
-	unsigned int	pos_s;
-	unsigned int	pos_ret;
+    char	*ptr_ret;
+	int		end;
+	int		pos;
+	int		real_len;
 
-	pos_s = start;
-	pos_ret = 0;
-	ptr_ret = malloc(len * sizeof(char));
-	if (ptr_ret != NULL)
+	if (!s)
+		return (NULL);
+	real_len = (int)ft_strlen(s);
+	if ((int)len > real_len)
+		ptr_ret = malloc((real_len + 1) * sizeof(char));
+	else
+		ptr_ret = malloc((len + 1) * sizeof(char));
+	if (!ptr_ret)
+		return (NULL);
+	else
 	{
-		while ((s[pos_s] != '\0') && (pos_ret <= len - 1))
+		ft_bzero(ptr_ret, ((int)len + 1) * sizeof(char));
+		pos = 0;
+		end = (int)start + (int)len;
+		if ((int)start >= (int)ft_strlen(s))
 		{
-			ptr_ret[pos_ret] = s[pos_s];
-			pos_s++;
-			pos_ret++;
+			return (ptr_ret);
 		}
-		ptr_ret[pos_ret] = '\0';
-	}
-	return (ptr_ret);
+		else
+		{
+			while (((int)start < (int)end) && (s[start] != '\0'))
+			{
+				ptr_ret[pos] = s[start];
+				pos++;
+				start++;
+			}
+			ptr_ret[pos] = '\0';
+			return (ptr_ret);
+		}
+	}	
 }
+
+/* int main(void)
+{
+	char	str[] = "01234";
+	char	*strsub;
+
+	strsub = ft_substr(str, 10, 10);
+	return (0);
+} */

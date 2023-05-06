@@ -14,7 +14,7 @@
 #include <string.h> */
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+/* char	*ft_strchr(const char *s, int c)
 {
 	int		pos;
 	int		str_len;
@@ -31,12 +31,29 @@ char	*ft_strchr(const char *s, int c)
 			pos++;
 	}
 	return (NULL);
+} */
+
+char	*ft_strchr(const char *s, int c)
+{
+	char	cc;
+	size_t	len_s;
+	size_t	pos;
+
+	cc = (char)c;
+	len_s = ft_strlen(s) + 1;
+	pos = 0;
+	while (pos < len_s)
+	{
+		if (s[pos] == cc)
+			return ((char *)(&s[pos]));
+		pos++;
+	}
+	return (NULL);
 }
 
 /* int	main(void)
 {
-	printf("LIBFT   : %s\n", ft_strchr("teste", '\0'));
-	printf("Standard: %s\n", strchr("teste", '\0'));
+	printf("LIBFT   : %s\n", ft_strchr("AA\0B", 'B'));
+	printf("Standard: %s\n", strchr("AA\0B", 'B'));
 	return (0);
-}
- */
+} */
