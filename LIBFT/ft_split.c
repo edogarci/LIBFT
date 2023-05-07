@@ -6,10 +6,11 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 21:16:02 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/05 18:30:01 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/06 16:21:27 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
 static int	get_amount_of_substr(char const *s, char c)
@@ -22,7 +23,7 @@ static int	get_amount_of_substr(char const *s, char c)
 	if (s)
 	{
 /* 		pos = 1;
-		len = ft_strlen(s);
+		len = strlen(s);
 		amount = 0;
 		while (pos <= len)
 		{
@@ -31,7 +32,7 @@ static int	get_amount_of_substr(char const *s, char c)
 				amount++;
 			pos++;
 		} */
-		len = ft_strlen(s);
+		len = strlen(s);
 		pos = 1;
 		while (pos <= len)
 		{
@@ -52,7 +53,7 @@ static int get_substr_len(char *str, char delimiter, int *real_len)
 
 	cont = 0;
 	pos = 0;
-	len = ft_strlen(str); //"   ipsum "
+	len = strlen(str); //"   ipsum "
 	while (pos <= len)
 	{
 		if (pos == 0)
@@ -133,10 +134,13 @@ char **ft_split(char const *s, char c)
 		{
 			substr_len = get_substr_len(ptr_substr, c, ptr_real_len);
 			ptr_ret[cont] = (char *)malloc((substr_len + 1) * sizeof(char));
-			assign_substr(ptr_ret[cont], ptr_substr, substr_len, c);
+			if (ptr_ret[cont])
+				assign_substr(ptr_ret[cont], ptr_substr, substr_len, c);
 			ptr_substr = ptr_substr + real_len;
 			cont++;
 		}
+		ptr_ret[cont] = (char *)malloc (1 * sizeof(char));
+		ptr_ret[cont] = '\0';
 	}
 	return (ptr_ret);
 }
@@ -144,9 +148,15 @@ char **ft_split(char const *s, char c)
 /* int main(void)
 {
     char    **ptr;
-	char	s[] = "split  ||this|for|me|||||!|";
-	char	del = '|';
+	char	s[] = "      split       this for   me  !       ";
+	char	del = ' ';
+	int		cont = 0;
 
 	ptr = ft_split(s, del);
+	while (cont < 5)
+	{
+		printf("%s\n", ptr[cont]);
+		cont++;
+	}
 	return (0);
 } */
