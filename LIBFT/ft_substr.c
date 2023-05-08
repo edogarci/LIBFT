@@ -6,15 +6,15 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 15:07:11 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/02 17:16:44 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/08 17:28:19 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    char	*ptr_ret;
+	char	*ptr_ret;
 	int		end;
 	int		pos;
 	int		real_len;
@@ -34,9 +34,7 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
 		pos = 0;
 		end = (int)start + (int)len;
 		if ((int)start >= (int)ft_strlen(s))
-		{
 			return (ptr_ret);
-		}
 		else
 		{
 			while (((int)start < (int)end) && (s[start] != '\0'))

@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 13:13:22 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/27 20:26:40 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:54:10 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	else
 	{
 		cont = 0;	
-/* 		while ((cont < (int)n) && (src != ((void *)0))) */
 		while (cont < (int)n)
 		{
 			((char *)dest)[cont] = ((const char *)src)[cont];

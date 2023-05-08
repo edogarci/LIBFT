@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 16:38:45 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/04 16:42:39 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/08 17:06:26 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_putstr_fd(char *s, int fd)
 	int	pos;
 
 	pos = 0;
-    while (s[pos] != '\0')
-    {
-    	write(fd, &(s[pos]), 1);
+	while (s[pos] != '\0')
+	{
+		write(fd, &(s[pos]), 1);
 		pos++;
-    }
+	}
 }

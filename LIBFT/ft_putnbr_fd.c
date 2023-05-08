@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:56:28 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/06 15:15:22 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/08 17:04:53 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,30 +59,26 @@ static char	get_if_xtreme_integer(int *n)
 		return (' ');
 }
 
-void    ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	int		len;
 	int		div;
 	int		n_aux;
-	char	c;
 	char	xtreme;
-	int		*ptr_n;
 
-	ptr_n = &n;
-	xtreme = get_if_xtreme_integer(ptr_n);
+	xtreme = get_if_xtreme_integer(&n);
 	len = get_math_len(n);
 	div = generate_div_val(len);
 	if (get_if_negative(n) == 'X')
 	{
-		ft_putchar_fd('-', fd); 
+		ft_putchar_fd('-', fd);
 		n_aux = n * -1;
 	}
 	else
 		n_aux = n;
 	while (len > 0)
 	{
-		c = (n_aux / div) + '0';
-		ft_putchar_fd(c, fd);
+		ft_putchar_fd(((n_aux / div) + '0'), fd);
 		n_aux = n_aux % div;
 		div = div / 10;
 		len--;

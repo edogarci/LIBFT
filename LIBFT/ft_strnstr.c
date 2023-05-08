@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 17:54:49 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/27 19:33:28 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/08 17:43:23 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 				pos_hay++;
 				pos_nee++;
 				if (needle[pos_nee] == '\0')
-					return ( (char *)haystack + pos_hay - pos_nee);
+					return ((char *)haystack + pos_hay - pos_nee);
 			}
 			else
 			{

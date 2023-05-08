@@ -6,11 +6,13 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 20:25:42 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/06 17:52:34 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/08 15:21:47 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
 static char	get_if_char_is_in_set(char c, char const *set)
 {
@@ -48,7 +50,7 @@ static int	get_trim_from_end(char const *s1, char const *set)
 	char	stop_flag;
 	int		cont;
 
-	cont = ft_strlen(s1) - 1;
+	cont = strlen(s1) - 1;
 	while (cont >= 0)
 	{
 		stop_flag = ' ';
@@ -57,43 +59,50 @@ static int	get_trim_from_end(char const *s1, char const *set)
 			return (cont);
 		cont--;
 	}
+	if (cont < 0)
+		cont = 0;
 	return (cont);
 }
 
-static void	create_new_string
-(char const *s1, int start, int end, char *ptr)
+static void	create_new_string(char const *s1, int start, int end, char *temp)
 {
 	int	cont;
 
 	cont = 0;
 	while (start <= end)
 	{
-		ptr[cont] = s1[start];
+		temp[cont] = s1[start];
 		cont++;
 		start++;
 	}
-	ptr[cont] = '\0';
+	temp[cont] = '\0';
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    char	*ptr;
+	char	*temp;
 	int		start;
 	int		end;
+	int		size;
 
 	start = get_trim_from_start(s1, set);
 	end = get_trim_from_end(s1, set);
-	ptr = malloc((end - start) * sizeof(char));
-	if (!ptr)
+	size = end - start + 1;
+	if (size < 0)
+		size = 0;
+	temp = malloc((size + 1) * sizeof(char));
+	if (!temp)
 		return (NULL);
-	create_new_string(s1, start, end, ptr);
-	return (ptr);
+	create_new_string(s1, start, end, temp);
+	return (temp);
 }
 
 /* int main(void)
 {
-	char	*ptr;
+	char	*ptr1;
 
-	ptr = ft_strtrim(".teste, bla ,.,.", ",.");
+	ptr1 = ft_strtrim("lorem \n ipsum \t dolor \n sit \t amet", " ");
+	printf("%s\n", ptr1);
 	return (0);
-} */
+}
+ */

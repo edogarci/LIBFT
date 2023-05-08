@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:29:37 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/04 09:41:58 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:53:31 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ static int	get_number_len(int n)
 		n = n / 10;
 		cont++;
 	}
-/* 	if (cont == 0)
-		cont = 1; */
 	if (neg == 'X')
 		return (cont + 1);
 	else
@@ -36,7 +34,7 @@ static int	get_number_len(int n)
 
 static char	translate_to_char(int digit)
 {
-	char ascii;
+	char	ascii;
 
 	if (digit < 0)
 		digit = digit * -1;
@@ -54,9 +52,6 @@ static void	iterate_number(int n, int len, char *str)
 		neg_flag = 'X';
 	str[len] = '\0';
 	len--;
-/* 	if (n == 0)
-		str[len] = '0'; */
-/* 	while (n % 10 != 0) */
 	while ((neg_flag == ' ' && len >= 0)
 		|| (neg_flag == 'X' && len > 0))
 	{

@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 16:44:07 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/04 17:40:31 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:55:52 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ void    ft_putchar_fd(char c, int fd)
     write(fd, &c, 1);
 } */
 
-void    ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	int     pos;
+	int	pos;
 
 	pos = 0;
-    while (s[pos] != '\0')
-    {
-    	write(fd, &(s[pos]), 1);
+	while (s[pos] != '\0')
+	{
+		write(fd, &(s[pos]), 1);
 		pos++;
-    }
-    if (s)
-        ft_putchar_fd('\n', fd);
+	}
+	if (s)
+		ft_putchar_fd('\n', fd);
 }
 
 /* int main(void)

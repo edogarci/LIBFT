@@ -6,33 +6,24 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 21:16:02 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/06 16:21:27 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/08 17:14:49 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+/* #include <string.h>
+#include <stdio.h> */
 #include "libft.h"
 
 static int	get_amount_of_substr(char const *s, char c)
 {
 	int	amount;
 	int	pos;
-	int len;
+	int	len;
 
 	amount = 0;
 	if (s)
 	{
-/* 		pos = 1;
-		len = strlen(s);
-		amount = 0;
-		while (pos <= len)
-		{
-			if (((s[pos] != c) && (s[pos - 1] == c))
-				|| (s[pos] == '\0' && s[pos -1] != c))
-				amount++;
-			pos++;
-		} */
-		len = strlen(s);
+		len = ft_strlen(s);
 		pos = 1;
 		while (pos <= len)
 		{
@@ -45,57 +36,43 @@ static int	get_amount_of_substr(char const *s, char c)
 	return (amount);
 }
 
-static int get_substr_len(char *str, char delimiter, int *real_len)
+static int	get_substr_len(char *str, char delimiter, int *real_len)
 {
 	int	pos;
-	int cont;
+	int	cont;
 	int	len;
 
 	cont = 0;
 	pos = 0;
-	len = strlen(str); //"   ipsum "
+	len = ft_strlen(str);
 	while (pos <= len)
 	{
 		if (pos == 0)
 		{
 			if (str[pos] != delimiter && str[pos] != '\0')
-				cont++;	
+				cont++;
 		}
 		else
 		{
 			if ((str[pos] == delimiter || str[pos] == '\0')
 				&& (str[pos - 1] != delimiter))
-			{
-				//cont++;
-				//pos++;
 				break ;
-			}
 			else
 			{
 				if (str[pos] != delimiter && str[pos] != '\0')
-				{
 					cont++;
-				}
 			}
 		}
 		pos++;
 	}
-/* 	while (!((str[pos] == delimiter) && (str[pos - 1] != delimiter)))
-	{
-		if (str[pos] != delimiter)
-			cont++;
-		pos++;
-		if (str[pos] == '\0')
-			break ;
-	} */
 	*real_len = pos;
 	return (cont);
 }
 
-static void assign_substr(char *dst, char *src, int len, char c)
+static void	assign_substr(char *dst, char *src, int len, char c)
 {
-	int pos;
-	int cont;
+	int	pos;
+	int	cont;
 
 	cont = 0;
 	pos = 0;
@@ -111,52 +88,44 @@ static void assign_substr(char *dst, char *src, int len, char c)
 	dst[cont] = '\0';
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    char    **ptr_ret;
+	char	**ptr_ret;
 	int		substrs_amount;
 	int		cont;
 	int		substr_len;
 	char	*ptr_substr;
-	int		*ptr_real_len;
 	int		real_len;
 
-	ptr_real_len = &real_len;
 	substrs_amount = get_amount_of_substr(s, c);
 	if (!s)
 		return (NULL);
-	ptr_ret = malloc(substrs_amount * sizeof(char *));
-	if (ptr_ret)
+	ptr_ret = malloc((substrs_amount + 1) * sizeof(char *));
+	if (!ptr_ret)
+		return (NULL);
+	cont = 0;
+	ptr_substr = (char *)s;
+	while (cont < (int)substrs_amount)
 	{
-		cont = 0;
-		ptr_substr = (char *)s;
-		while (cont < (int)substrs_amount)
-		{
-			substr_len = get_substr_len(ptr_substr, c, ptr_real_len);
-			ptr_ret[cont] = (char *)malloc((substr_len + 1) * sizeof(char));
-			if (ptr_ret[cont])
-				assign_substr(ptr_ret[cont], ptr_substr, substr_len, c);
-			ptr_substr = ptr_substr + real_len;
-			cont++;
-		}
-		ptr_ret[cont] = (char *)malloc (1 * sizeof(char));
-		ptr_ret[cont] = '\0';
+		substr_len = get_substr_len(ptr_substr, c, &real_len);
+		ptr_ret[cont] = (char *)malloc((substr_len + 1) * sizeof(char));
+		if (!ptr_ret[cont])
+			return (NULL);
+		assign_substr(ptr_ret[cont], ptr_substr, substr_len, c);
+		ptr_substr = ptr_substr + real_len;
+		cont++;
 	}
+	ptr_ret[cont] = (char *)malloc(1 * sizeof(NULL));
+	ptr_ret[cont] = NULL;
 	return (ptr_ret);
 }
 
-/* int main(void)
+/* int	main(void)
 {
-    char    **ptr;
-	char	s[] = "      split       this for   me  !       ";
+	char	**ptr;
+	char	s[] = "1 2 3 4";
 	char	del = ' ';
-	int		cont = 0;
 
 	ptr = ft_split(s, del);
-	while (cont < 5)
-	{
-		printf("%s\n", ptr[cont]);
-		cont++;
-	}
 	return (0);
 } */
