@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 20:25:42 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/08 15:21:47 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:13:02 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int	get_trim_from_end(char const *s1, char const *set)
 	char	stop_flag;
 	int		cont;
 
-	cont = strlen(s1) - 1;
+	cont = ft_strlen(s1) - 1;
 	while (cont >= 0)
 	{
 		stop_flag = ' ';
@@ -85,11 +85,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	int		size;
 
+	if (!s1)
+		return (NULL);
 	start = get_trim_from_start(s1, set);
 	end = get_trim_from_end(s1, set);
-	size = end - start + 1;
-	if (size < 0)
-		size = 0;
+ 	size = end - start;
+	if (size > 0)
+		size++;
+	else if (size <= 0)
+	{
+		if(size == 0 && (s1[start] != '\0' || s1[end] != '\0'))
+			size = 1;
+		else
+			size = 0;
+	}
 	temp = malloc((size + 1) * sizeof(char));
 	if (!temp)
 		return (NULL);
@@ -101,8 +110,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*ptr1;
 
-	ptr1 = ft_strtrim("lorem \n ipsum \t dolor \n sit \t amet", " ");
+	ptr1 = ft_strtrim("", "acb");
 	printf("%s\n", ptr1);
 	return (0);
-}
- */
+} */
