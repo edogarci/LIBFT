@@ -6,12 +6,10 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 14:43:05 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/26 11:50:28 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:19:03 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <string.h>
-#include <stdio.h> */
 #include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -35,12 +33,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	else
 		return (0);
 }
-
-/* int	main(void)
-{
-	printf("LIBFT   : %i\n", ft_strncmp("test\200", "test\0", 6));
-	printf("Standard: %i\n", strncmp("test\200", "test\0", 6));
-
-	return (0);
-}
- */

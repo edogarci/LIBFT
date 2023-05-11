@@ -6,12 +6,10 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 21:16:02 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/08 17:14:49 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:17:01 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <string.h>
-#include <stdio.h> */
 #include "libft.h"
 
 static int	get_amount_of_substr(char const *s, char c)
@@ -100,7 +98,7 @@ char	**ft_split(char const *s, char c)
 	substrs_amount = get_amount_of_substr(s, c);
 	if (!s)
 		return (NULL);
-	ptr_ret = malloc((substrs_amount + 1) * sizeof(char *));
+	ptr_ret = malloc(((substrs_amount + 1) * sizeof(char *)));
 	if (!ptr_ret)
 		return (NULL);
 	cont = 0;
@@ -110,22 +108,16 @@ char	**ft_split(char const *s, char c)
 		substr_len = get_substr_len(ptr_substr, c, &real_len);
 		ptr_ret[cont] = (char *)malloc((substr_len + 1) * sizeof(char));
 		if (!ptr_ret[cont])
+		{
+			while (--cont >= 0)
+				free(ptr_ret[cont]);
+			free(ptr_ret);
 			return (NULL);
+		}
 		assign_substr(ptr_ret[cont], ptr_substr, substr_len, c);
 		ptr_substr = ptr_substr + real_len;
 		cont++;
 	}
-	ptr_ret[cont] = (char *)malloc(1 * sizeof(NULL));
 	ptr_ret[cont] = NULL;
 	return (ptr_ret);
 }
-
-/* int	main(void)
-{
-	char	**ptr;
-	char	s[] = "1 2 3 4";
-	char	del = ' ';
-
-	ptr = ft_split(s, del);
-	return (0);
-} */

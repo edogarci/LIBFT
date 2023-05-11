@@ -1,25 +1,47 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/05/11 12:07:08 by edogarci          #+#    #+#              #
+#    Updated: 2023/05/11 12:10:47 by edogarci         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+LIB = ar rcs
+RM = rm -f
+
+CC = gcc
+CCFLAGS = -Wall -Wextra -Werror
+
 NAME = libft.a
+SRC = $(wildcard ./*.c)
+OBJ = $(SRC:.c=.o)
+INCLUDE = libft.h
 
-SOURCE = $(wildcard ./*.c)
+BONUSSRC = $(wildcard ./ft_lst*.c)
 
-FLAGS = -Wall -Wextra -Werror
-
-OBJECTS = $(SOURCE:.c=.o)
+BONUSOBJ = $(BONUSSRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-	ar rcs $(NAME) $(OBJECTS)
+$(NAME): $(OBJ) $(INCLUDE)
+	$(LIB) $(NAME) $(OBJ)
 
-$(OBJECTS): $(SOURCE)
-	gcc $(FLAGS) -c $(SOURCE)
+bonus: $(BONUSOBJ) $(INCLUDE)
+	$(LIB) $(NAME) $(BONUSOBJ)
+
+%.o: %.c
+	$(CC) $(CCFLAGS) -c -o $@ $<
 
 clean:
-	rm -f $(OBJECTS)
+	$(RM) $(OBJ) $(BONUSOBJ)
 
-fclean:
-	rm -f $(OBJECTS) $(NAME)
+fclean: clean
+	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+rebonus: fclean bonus

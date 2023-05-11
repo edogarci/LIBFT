@@ -6,13 +6,11 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 17:53:12 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/08 17:16:58 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:18:05 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -32,14 +30,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(ptr_ret, s2, len_s1 + len_s2 + 1);
 	return (ptr_ret);
 }
-
-/* int main(void)
-{
-	char	s1[] = "lorem ipsum";
-	char	s2[] = "dolor sit amet";
-	char	*strjoin;
-
-	strjoin = ft_strjoin(s1, s2);
-	printf("%s\n", strjoin);
-	return (0);
-} */

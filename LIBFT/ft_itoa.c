@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:29:37 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/08 16:53:31 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:10:51 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,3 @@ char	*ft_itoa(int n)
 	iterate_number(n, len, ptr_ret);
 	return (ptr_ret);
 }
-
-/* int main(void)
-{
-	char *ptr;
-	
-	ptr = ft_itoa(-1234);
-	return (0);
-} */

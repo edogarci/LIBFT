@@ -6,13 +6,11 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 20:25:42 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/09 12:13:02 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:19:51 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 
 static char	get_if_char_is_in_set(char c, char const *set)
 {
@@ -105,12 +103,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	create_new_string(s1, start, end, temp);
 	return (temp);
 }
-
-/* int main(void)
-{
-	char	*ptr1;
-
-	ptr1 = ft_strtrim("", "acb");
-	printf("%s\n", ptr1);
-	return (0);
-} */

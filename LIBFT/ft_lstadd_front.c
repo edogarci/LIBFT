@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 15:16:58 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/10 17:10:16 by edogarci         ###   ########.fr       */
+/*   Created: 2023/05/11 11:06:48 by edogarci          #+#    #+#             */
+/*   Updated: 2023/05/11 18:20:26 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* typedef struct s_list
+{
+	void *content;
+	struct s_list *next;
+} t_list; */
+
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void    ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if ((ft_isalpha(c) == 1) || (ft_isdigit(c) == 1))
-		return (1);
-	else
-		return (0);
+	if (lst)
+	{
+		if (*lst)
+			new->next = *lst;
+		else
+			*lst = new;
+	}
 }
