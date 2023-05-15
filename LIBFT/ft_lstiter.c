@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:49:01 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/11 18:55:38 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/15 12:16:15 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-    while (lst != NULL)
-    {
-        (*f)(lst->content);
-        lst = (t_list *)(lst->next);
-    }
+	while (lst != NULL)
+	{
+		(*f)(lst->content);
+		lst = (t_list *)(lst->next);
+	}
 }
