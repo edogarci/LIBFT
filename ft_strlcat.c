@@ -6,12 +6,10 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:11:36 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/27 16:44:01 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:18:18 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <string.h>
-#include <stdio.h> */
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
@@ -39,14 +37,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		len_dst = size;
 	return (len_dst + len_src);
 }
-
-/* int	main(void)
-{
-	char	dst[] = "pqrstuvwxyz";
-	char	src[] = "abcd";
-	size_t	n = 20;
-
-	printf("LIBFT: %lu - %s\n", ft_strlcat(dst, src, n), dst);
-	return (0);
-}
- */

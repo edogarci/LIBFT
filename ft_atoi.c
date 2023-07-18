@@ -6,12 +6,10 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 14:43:05 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/27 19:36:32 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:09:25 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <stdio.h>
-#include <stdlib.h> */
 #include "libft.h"
 
 static int	find_first_valid_pos(const char *str)
@@ -55,11 +53,3 @@ int	ft_atoi(const char *str)
 	else
 		return (num);
 }
-
-/* int	main(void)
-{
-	char str[] = "+101";
-
-	printf("LIBFT   : %i\n", ft_atoi(str));
-	printf("Standard: %i\n", atoi(str));
-} */

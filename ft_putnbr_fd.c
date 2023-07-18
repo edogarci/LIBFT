@@ -6,12 +6,10 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:56:28 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/08 17:04:53 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:13:03 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <unistd.h>
-#include <fcntl.h> */
 #include "libft.h"
 
 static int	get_math_len(int n)
@@ -86,12 +84,3 @@ void	ft_putnbr_fd(int n, int fd)
 	if (xtreme == 'X')
 		ft_putchar_fd('8', fd);
 }
-
-/* int main(void)
-{
-    int fd;
-
-    fd = open("test", O_WRONLY);
-    ft_putnbr_fd(-2147483648LL, fd);
-    return (0);
-} */

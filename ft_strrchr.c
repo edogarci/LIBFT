@@ -6,12 +6,10 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:54:34 by edogarci          #+#    #+#             */
-/*   Updated: 2023/05/08 17:27:31 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:19:29 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <stdio.h>
-#include <string.h> */
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
@@ -29,11 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-/* int	main(void)
-{
-	printf("LIBFT: %s\n", ft_strrchr("123456789", 'a'));
-	//printf("Stad.: %s\n", strrchr("teste", 'e'));
-	return (0);
-}
- */

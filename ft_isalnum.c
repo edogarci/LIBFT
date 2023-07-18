@@ -6,12 +6,10 @@
 /*   By: edogarci <edogarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:16:58 by edogarci          #+#    #+#             */
-/*   Updated: 2023/04/20 20:25:41 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:10:16 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <stdio.h>
-#include <ctype.h> */
 #include "libft.h"
 
 int	ft_isalnum(int c)
@@ -21,16 +19,3 @@ int	ft_isalnum(int c)
 	else
 		return (0);
 }
-
-/* int	main(int argc, char *argv[])
-{
-	int	c;
-
-	c = (int)*argv[1];
-	(void)argc;
-
-	printf("LIBFT   : %i\n", ft_isalnum(c));
-	printf("Standard: %i\n", isalnum(c));
-	return (0);
-}
- */
